@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const App = () => {
+const Title = () => {
+  return <h1>Hello React</h1>
+}
+
+const Content = () => {
   return (
       <div>
-          <h1>Hello React</h1>
           <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
               odit quas quibusdam quod eum iste totam inventore laborum, nostrum
@@ -19,6 +22,11 @@ const App = () => {
           </p>
       </div>
   )
+}
+
+const App = () => {
+    return (
+      <div> <Title /> <Content /> </div>) 
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
