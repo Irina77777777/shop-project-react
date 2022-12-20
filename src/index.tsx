@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
 
 const Title = () => {
@@ -7,7 +7,7 @@ const Title = () => {
 
 const Content = () => {
   return (
-      <div>
+      <React.Fragment>
           <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
               odit quas quibusdam quod eum iste totam inventore laborum, nostrum
@@ -20,13 +20,13 @@ const Content = () => {
               autem ratione. Maxime est numquam illum in corporis ratione hic
               nesciunt.
           </p>
-      </div>
+      </React.Fragment>
   )
 }
 
 const App = () => {
     return (
-      <div> <Title /> <Content /> </div>) 
+      <> <Title /> <Content /> </>) 
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
