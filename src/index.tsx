@@ -1,9 +1,20 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
 
-const Title = () => {
-  return <h1>Hello React</h1>
+
+
+type TitleProps = {
+    title?: string
 }
+
+const Title = (props: TitleProps) => {
+    console.log(props)
+    return <h1>Hello {props.title}</h1>
+}
+
+
+
+
 
 const Content = () => {
   return (
@@ -26,7 +37,13 @@ const Content = () => {
 
 const App = () => {
     return (
-      <> <Title /> <Content /> </>) 
+        <>
+            <Title title="React" />
+            <Title title="TS" />
+            <Title title="JS" />
+            <Content />
+        </>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
