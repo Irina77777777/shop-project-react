@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
 
 type TitleProps = {
-    title: string
+    title?: string | number
 }
 
 const Title = (props: TitleProps) => {
@@ -23,7 +23,7 @@ const App = () => {
         <>
             <Title title="React" />
             <Title title="TS" />
-            <Title title="JS" />
+            <Title title={10} />
             <Content />
         </>
     )
