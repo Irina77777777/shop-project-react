@@ -1,19 +1,14 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
+import Title from './Title'
 
-type TitleProps = {
-    title?: string | number
-}
 
 type ContentProps = {
     p1: string
     p2: string
 }
 
-const Title = (props: TitleProps) => {
-    console.log(props)
-    return <h1>Hello {props.title}</h1>
-}
+
 
 
 const Content = (props: ContentProps) => {
