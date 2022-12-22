@@ -6,7 +6,7 @@ const App = (props: Props) => {
     return (
         <>
             <CssBaseline/>
-            <Header />
+            <Header/> 
         </>
     )
 }
