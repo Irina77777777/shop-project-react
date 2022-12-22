@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
 
-
-
 type TitleProps = {
-    title?: string
+    title: string
 }
 
 const Title = (props: TitleProps) => {
@@ -13,24 +11,9 @@ const Title = (props: TitleProps) => {
 }
 
 
-
-
-
 const Content = () => {
   return (
       <React.Fragment>
-          <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-              odit quas quibusdam quod eum iste totam inventore laborum, nostrum
-              autem ratione. Maxime est numquam illum in corporis ratione hic
-              nesciunt.
-          </p>
-          <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-              odit quas quibusdam quod eum iste totam inventore laborum, nostrum
-              autem ratione. Maxime est numquam illum in corporis ratione hic
-              nesciunt.
-          </p>
       </React.Fragment>
   )
 }
