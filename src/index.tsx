@@ -1,3 +1,4 @@
+import App from 'container/App/App'
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -5,4 +6,5 @@ import ReactDOM from 'react-dom/client'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(<React.StrictMode>
+    <App/>
 </React.StrictMode>)
