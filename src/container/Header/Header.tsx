@@ -1,21 +1,22 @@
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
 import Logo from 'components/CartHeader/Logo/Logo'
-import { green } from '@mui/material/colors'
-import './Header.css'
+import './Header.scss'
 
 
-https: type Props = {}
+type Props = {}
+
 const Header = (props: Props) => {
+    let appBar = true
     return (
     <>
-            <AppBar position="static" className='app-bar'>
+            <AppBar position="static"
+                className={`${appBar ? 'app-bar-grey' : 'app-bar'}`}>
                
             <Container maxWidth="lg">
                 <Toolbar>
