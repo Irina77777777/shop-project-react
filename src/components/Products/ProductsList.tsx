@@ -19,7 +19,7 @@ const ProductsList = (props: Props) => {
                         desc="This is iPhone X"
                         type="phone"
                         capacity="64"
-                        prise={500}
+                        price={500}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -28,7 +28,7 @@ const ProductsList = (props: Props) => {
                         desc="This is iPhone 14 Pro"
                         type="phone"
                         capacity="128"
-                        prise={1500}
+                        price={1500}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -37,7 +37,7 @@ const ProductsList = (props: Props) => {
                         desc="This is iPhone 12"
                         type="phone"
                         capacity="512"
-                        prise={2000}
+                        price={2000}
                     />
                 </Grid>
             </Grid>
