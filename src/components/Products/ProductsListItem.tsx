@@ -9,6 +9,7 @@ type Props = {
     price: number
 }
 
+
 const ProductsListItem = ({ title, desc, type, capacity, price }: Props ) => {
     return (
         <Card className="product" variant='outlined'>
@@ -27,6 +28,7 @@ const ProductsListItem = ({ title, desc, type, capacity, price }: Props ) => {
             <CardActions className='btns-wrap'>
                 <Button variant='outlined'>Add to cart</Button>
             </CardActions>
+            
         </Card>
     )
 }
