@@ -2,7 +2,8 @@
 
 
 
- type ProductProps = {
+type ProductProps = {
+       // id:number
      title: string
      desc: string
      type: string
