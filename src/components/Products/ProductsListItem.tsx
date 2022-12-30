@@ -19,24 +19,14 @@ type Props = {
   
 const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props ) => {
     const [count, setCount] = useState<number>(1)
-    const [color, setColor] = useState<string>("green")
+   
     const onIncrementClick = () => {
         setCount ((prevState: number) => prevState + 1)
     }
      const onDecrementClick = () => {
          setCount((prevState: number) => prevState - 1)
      }
-     const changeColor = () => {
-        // setColor((prevState: string) => 
-        // prevState === "green" ? "red" : "green")
-
-        setColor((prevState:string) => {
-            if (prevState === 'green') {
-                return 'red'
-            } else { return 'green'
-            }
-        })
-     }
+     
 
     return (
         <Card className="product" variant="outlined">
@@ -55,8 +45,7 @@ const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props )
                 <div className="product-price">
                     <span>Prise:</span> {price}
                 </div>
-                <p className={`${color}`}>Color: {color}</p>
-                <Button onClick={changeColor} >Change color</Button>
+               
                 <div className="product-quantity">
                     <Button
                         variant="outlined"
