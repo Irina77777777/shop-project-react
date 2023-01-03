@@ -8,7 +8,9 @@ import CartHeader from 'components/CartHeader/CartHeader'
 import Logo from 'components/CartHeader/Logo/Logo'
 import './Header.scss'
 
-
+// type Props = {
+//     addProductToCart: (count: number, price: number) => void
+// }
 type Props = {
     cartData: {
         totalCount: number
@@ -16,32 +18,33 @@ type Props = {
     }
 }
 
-const Header = ({ cartData }: Props) => {
+const Header = ({cartData}: Props) => {
     let appBar = false
-    console.log(cartData)
+     console.log(cartData)
     return (
-    <>
-            <AppBar position="static"
-                className={`${appBar ? 'app-bar-grey' : 'app-bar'}`}>
-               
-            <Container maxWidth="lg">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Logo/>
+        <>
+            <AppBar
+                position="static"
+                className={`${appBar ? 'app-bar-grey' : 'app-bar'}`}
+            >
+                <Container maxWidth="lg">
+                    <Toolbar>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Logo />
                         <Menu />
                         <CartHeader cartData={cartData} />
-                </Toolbar>
-            </Container >
-        </AppBar>
-    </>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </>
     )
 }
 export default Header
