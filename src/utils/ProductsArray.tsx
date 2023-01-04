@@ -2,7 +2,7 @@
 
 
 
-type ProductProps = {
+export type ProductProps = {
         id:number
      title: string
      desc: string
@@ -66,5 +66,14 @@ type ProductProps = {
          price: 3000,
          image: '/images/iphon_whit.jpg',
      },
- ]
+]
+ 
+export const getProductsObject = (array: ProductProps[]) =>
+    array.reduce(
+        (object, product) => ({
+            ...object,
+            [product.id]: product,
+        }),
+        {}
+    )
 export default productsArray
