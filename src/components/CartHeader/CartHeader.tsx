@@ -18,7 +18,6 @@ const CartHeader = ({
     productsInCart,
     productsObject = getProductsObject(productsArray),
 }: Props) => {
-    productsObject = getProductsObject(productsArray)
     return (
         <div>
             <div>
