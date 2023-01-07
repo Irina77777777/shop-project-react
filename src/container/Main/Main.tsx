@@ -11,6 +11,7 @@ type Props = {
     addProductToCart: (id: number, count: number) => void
     productsInCart: {
         [id: number]: number
+        
     }
     productsObject?: {
         [id: number]: ProductProps

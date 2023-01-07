@@ -5,8 +5,9 @@ import Main from 'container/Main/Main'
 import { useState } from 'react'
 
 
-type ProductsInCart={
+type ProductsInCart = {
     [id: number]: number
+   
 }
 
 const App = () => {
@@ -14,8 +15,10 @@ const App = () => {
 
     const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
         1: 5,
-        2: 1,
-    })
+        // 1: 1000,
+    
+        // 2: 1,
+    } )
 
     const addProductToCart = (id: number, count: number) => {
         setProductsInCart((prevState: ProductsInCart) => ({
