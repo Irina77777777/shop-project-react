@@ -5,7 +5,7 @@ import CartPage from 'pages/CartPage/CartPage'
 import AboutPage from "pages/AboutPage/AboutPage"
 import PaymentPage from "pages/PaymentPage/PaymentPage"
 import ShippingPage from "pages/ShippingPage/ShippingPage"
-import productsArray, { ProductProps} from "utils/productsArray"
+import  { ProductProps} from "utils/productsArray"
 
 type Props = {
     addProductToCart: (id: number, count: number) => void
