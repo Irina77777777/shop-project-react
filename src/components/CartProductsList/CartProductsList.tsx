@@ -2,6 +2,7 @@ import productsArray, {
     getProductsObject,
     ProductProps,
 } from 'utils/ProductsArray'
+import CartProductsListItem from './CartProductsListItem'
 
 type Props = {
     productsInCart: {
@@ -10,17 +11,22 @@ type Props = {
     productsObject?: {
         [id: number]: ProductProps
     }
+    CartItem?:any
 }
 const CartProductsList = ({
     productsInCart,
-    productsObject = getProductsObject(productsArray), }: Props) => {
+    productsObject = getProductsObject(productsArray),
+    CartItem = CartProductsListItem, }: Props) => {
     return (
         <div>
             {Object.keys(productsInCart).map((productId) => (
-                <div key={productId}>
-                    {productsObject[parseInt(productId)].title} : {'  '}
-                    {productsInCart[parseInt(productId)]}
-                </div>
+                <CartItem
+                     key={productId}
+                    product={productsObject[parseInt(productId)]}
+                   productCount= {productsInCart[parseInt(productId)]}
+                />
+                   
+                
             ))}
         </div>
     )

@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material"
 import CartTotal from "components/CartTotal/CartTotal"
 import CartProductsList from "components/CartProductsList/CartProductsList"
+import CartProductsListItemExtended from "components/CartProductsList/CartProductsListItemExtended"
 
 type Props = {
     productsInCart: {
@@ -22,7 +23,9 @@ const CartPage = ({
               {' '}
               Cart
           </Typography>{' '}
-          <CartProductsList productsInCart={ productsInCart} />
+          <CartProductsList productsInCart={productsInCart}
+           CartItem={CartProductsListItemExtended}  
+        />
          <CartTotal productsInCart={productsInCart} />
       </div>
   )
