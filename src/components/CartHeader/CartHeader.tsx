@@ -3,7 +3,7 @@
 import productsArray, {
     getProductsObject,
     ProductProps,
-} from 'utils/productsArray'
+} from 'utils/ProductsArray'
 
 type Props = {
     productsInCart: {

@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material'
 import ProductsListItem from './ProductsListItem'
-import productsArray from 'utils/productsArray'
-
+import productsArray from 'utils/ProductsArray'
 
 type ProductProps = {
     id: number
