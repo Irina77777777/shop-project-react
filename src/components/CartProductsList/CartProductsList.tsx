@@ -11,22 +11,24 @@ type Props = {
     productsObject?: {
         [id: number]: ProductProps
     }
-    CartItem?:any
+    CartItem?: any
+    removeProductFromCart?: (id: number) => void
 }
 const CartProductsList = ({
     productsInCart,
     productsObject = getProductsObject(productsArray),
-    CartItem = CartProductsListItem, }: Props) => {
+    CartItem = CartProductsListItem,
+    removeProductFromCart,
+            }: Props) => {
     return (
         <>
             {Object.keys(productsInCart).map((productId) => (
                 <CartItem
-                     key={productId}
+                    key={productId}
                     product={productsObject[parseInt(productId)]}
-                   productCount= {productsInCart[parseInt(productId)]}
+                    productCount={productsInCart[parseInt(productId)]}
+                    removeProductFromCart={removeProductFromCart}
                 />
-                   
-                
             ))}
         </>
     )
