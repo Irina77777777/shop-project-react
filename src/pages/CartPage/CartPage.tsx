@@ -1,21 +1,15 @@
 import { Typography } from "@mui/material"
 import CartTotal from "components/CartTotal/CartTotal"
-import productsArray, {
-    getProductsObject,
-    ProductProps,
-} from 'utils/ProductsArray'
+import CartProductsList from "components/CartProductsList/CartProductsList"
 
 type Props = {
     productsInCart: {
         [id: number]: number
     }
-    productsObject?: {
-        [id: number]: ProductProps
-    }
 }
 const CartPage = ({
     productsInCart,
-    productsObject = getProductsObject(productsArray) } : Props ) => {
+     } : Props ) => {
   return (
       <div>
           <Typography
@@ -28,14 +22,7 @@ const CartPage = ({
               {' '}
               Cart
           </Typography>{' '}
-          <div>
-              {Object.keys(productsInCart).map((productId) => (
-                  <div key={productId}>
-                      {productsObject[parseInt(productId)].title} : {'  '}
-                      {productsInCart[parseInt(productId)]}
-                  </div>
-              ))}
-          </div>
+          <CartProductsList productsInCart={ productsInCart} />
          <CartTotal productsInCart={productsInCart} />
       </div>
   )
