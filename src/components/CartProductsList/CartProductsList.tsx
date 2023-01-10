@@ -18,7 +18,7 @@ const CartProductsList = ({
     productsObject = getProductsObject(productsArray),
     CartItem = CartProductsListItem, }: Props) => {
     return (
-        <div>
+        <>
             {Object.keys(productsInCart).map((productId) => (
                 <CartItem
                      key={productId}
@@ -28,7 +28,7 @@ const CartProductsList = ({
                    
                 
             ))}
-        </div>
+        </>
     )
 }
 export default CartProductsList

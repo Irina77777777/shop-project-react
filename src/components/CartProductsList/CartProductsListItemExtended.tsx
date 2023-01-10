@@ -1,5 +1,6 @@
 import { Card, CardContent, Grid} from "@mui/material"
 import { ProductProps } from "utils/ProductsArray"
+import './CartProductsListItemExtended.scss'
 
 
 type Props = {
@@ -10,8 +11,8 @@ const CartProductsListItemExtended = ({productCount, product}: Props) => {
   return (
       <Grid item xs={12} sm={4}>
           <Card>
-              <CardContent>
-                  <div>
+              <CardContent >
+                  <div className="cart-img">
                       <img src={product.image} alt="" />
                   </div>
                   <div>{product.title}</div>
