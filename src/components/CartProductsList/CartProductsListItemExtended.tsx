@@ -24,12 +24,14 @@ const CartProductsListItemExtended = ({productCount, product, removeProductFromC
                   <p>Count: {productCount}</p>
                   <Quantity
                       count={productCount}
-                      onDecrementClick={() =>
+                      onDecrementClick={() => productCount <= 1 ?
+                          removeProductFromCart(product.id) : 
                           changeProductQuantity(product.id, productCount - 1)
                       }
                       onIncrementClick={() =>
                           changeProductQuantity(product.id, productCount + 1)
                       }
+                      minCount={0}
                   />
                   <br />
                   <Button
