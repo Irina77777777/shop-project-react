@@ -4,16 +4,25 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import Main from 'container/Main/Main'
 import { useState } from 'react'
 import { omit } from 'lodash'
+import { type } from '@testing-library/user-event/dist/type'
 
 
 type ProductsInCart={
     [id: number]: number
+}
+type productsLikeState = {
+    [id: number]: boolean
 }
 
 const App = () => {
     const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
         1: 5,
         2: 1,
+    })
+
+    const [productsLikeState, setProductsLikeState] = useState<productsLikeState>({
+        1: true,
+        2: true,
     })
 
     const addProductToCart = (id: number, count: number) => {
