@@ -11,12 +11,16 @@ type Props = {
     productsInCart: { [id: number]: number }
     removeProductFromCart: (id: number) => void
     changeProductQuantity: (id: number, count: number) => void
+    productsLikeState: { [id: number]: boolean }
+    changeLikeState: (id: number, isLiked: boolean) => void
 }
 const Main = ({
     addProductToCart,
     productsInCart,
     removeProductFromCart,
     changeProductQuantity,
+    productsLikeState,
+    changeLikeState,
 }: Props) => {
     return (
         <Container
@@ -29,7 +33,13 @@ const Main = ({
             <Routes>
                 <Route
                     path="/"
-                    element={<Home addProductToCart={addProductToCart} />}
+                    element={
+                        <Home
+                            addProductToCart={addProductToCart}
+                            productsLikeState={productsLikeState}
+                            changeLikeState={changeLikeState}
+                        />
+                    }
                 />
                 <Route
                     path="cart"
