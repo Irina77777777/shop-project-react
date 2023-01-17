@@ -12,7 +12,7 @@ type Props = {
     removeProductFromCart: (id: number) => void
     changeProductQuantity: (id: number, count: number) => void
     productsLikeState: { [id: number]: boolean }
-    changeLikeState: (id: number, isLiked: boolean) => void
+    toggleLikeState: (id: number) => void
 }
 const Main = ({
     addProductToCart,
@@ -20,7 +20,7 @@ const Main = ({
     removeProductFromCart,
     changeProductQuantity,
     productsLikeState,
-    changeLikeState,
+    toggleLikeState,
 }: Props) => {
     return (
         <Container
@@ -37,7 +37,7 @@ const Main = ({
                         <Home
                             addProductToCart={addProductToCart}
                             productsLikeState={productsLikeState}
-                            changeLikeState={changeLikeState}
+                             toggleLikeState={toggleLikeState}
                         />
                     }
                 />

@@ -4,7 +4,6 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import Main from 'container/Main/Main'
 import { useState } from 'react'
 import { omit } from 'lodash'
-//import { type } from '@testing-library/user-event/dist/type'
 
 
 
@@ -14,7 +13,7 @@ type ProductsInCart={
 type productsLikeState = {
     [id: number]: boolean
 }
-type changeLikeState = {
+type toggleLikeState = {
     [id: number]: boolean
 }
 
@@ -30,14 +29,12 @@ const App = () => {
         
     })
 
-    const changeLikeState = (id: number, isLiked: boolean) => {
+   const toggleLikeState = (id: number) => {
         setProductsLikeState((prevState: productsLikeState) => ({
             ...prevState,
-            //isLikedd: true,
-           [id]: prevState[id] = true,
-     
+            [id]: !prevState[id],
         }))
-}
+    }
 
     const addProductToCart = (id: number, count: number) => {
         setProductsInCart((prevState: ProductsInCart) => ({
@@ -67,7 +64,7 @@ const App = () => {
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
                 productsLikeState={productsLikeState}
-                changeLikeState={changeLikeState}
+                toggleLikeState={toggleLikeState}
             />
         </StyledEngineProvider>
     )

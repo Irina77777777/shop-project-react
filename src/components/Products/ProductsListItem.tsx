@@ -19,9 +19,9 @@ type Props = {
     price: number
     image: string
     addProductToCart: (id: number, count: number) => void
-    // isLiked?: boolean
-    productsLikeState: { [id: number]: boolean }
-    changeLikeState: (id: number, isLiked: boolean) => void
+     isLiked?: boolean
+    //productsLikeState: { [id: number]: boolean }
+    toggleLikeState: (id: number) => void
 }
   
 const ProductsListItem = ({
@@ -33,9 +33,9 @@ const ProductsListItem = ({
     price,
     image,
     addProductToCart,
-    //isLiked = false,
-    productsLikeState,
-    changeLikeState,
+    isLiked = false,
+    //productsLikeState,
+    toggleLikeState,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
 
@@ -46,31 +46,16 @@ const ProductsListItem = ({
         setCount((prevState: number) => prevState - 1)
     }
 
-    const changLikeState = () => {
-        setCount((prevState: number) => prevState + 1)
-        if (count % 2 === 0) {
-           // productsLikeState[id] = false 
-            alert(count)
-            productsLikeState[id] = true
-             productsLikeState[id] ? <FavoriteIcon /> : <FavoriteBorderIcon />
-        } else {
-            alert(count)
-            productsLikeState[id] = false 
-            productsLikeState[id] ? <FavoriteIcon /> : <FavoriteBorderIcon /> 
-        }
-
-    }
-
     return (
         <Card className="product" variant="outlined">
             <CardContent>
                 <Button
                     variant="outlined"
-                   onClick={changLikeState} 
+                    onClick={() => toggleLikeState(id) }
                     //{ isLiked = false}}
-                >
-
-                    {productsLikeState[id] ? (
+                >       
+                    {/* {productsLikeState[id] */}
+                         { isLiked ? (
                         <FavoriteIcon />
                     ) : (
                         <FavoriteBorderIcon />
@@ -111,5 +96,5 @@ const ProductsListItem = ({
         </Card>
     )
 }
-
+//export const { toggleLikeState } = likeSlice.actions
 export default ProductsListItem
