@@ -20,7 +20,6 @@ type Props = {
     image: string
     addProductToCart: (id: number, count: number) => void
      isLiked?: boolean
-    //productsLikeState: { [id: number]: boolean }
     toggleLikeState: (id: number) => void
 }
   
@@ -34,7 +33,6 @@ const ProductsListItem = ({
     image,
     addProductToCart,
     isLiked = false,
-    //productsLikeState,
     toggleLikeState,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
@@ -52,7 +50,6 @@ const ProductsListItem = ({
                 <Button
                     variant="outlined"
                     onClick={() => toggleLikeState(id) }
-                    //{ isLiked = false}}
                 >       
                     {/* {productsLikeState[id] */}
                          { isLiked ? (
@@ -61,8 +58,6 @@ const ProductsListItem = ({
                         <FavoriteBorderIcon />
                     )}
 
-
-                    {/* {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />} */}
                 </Button>
                 <div className="product-img">
                     <img src={image} alt="" />

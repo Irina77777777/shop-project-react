@@ -13,9 +13,6 @@ type ProductsInCart={
 type productsLikeState = {
     [id: number]: boolean
 }
-type toggleLikeState = {
-    [id: number]: boolean
-}
 
 const App = () => {
     const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
