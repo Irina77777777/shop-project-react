@@ -16,3 +16,4 @@ export const likeSlice = createSlice({
     initialState,
     reducers:{}
 })
+export default likeSlice.reducer
