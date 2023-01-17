@@ -9,6 +9,7 @@ import { useState } from 'react'
 import Quantity from 'components/Quantity/Quantity'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {
     id: number
@@ -19,8 +20,8 @@ type Props = {
     price: number
     image: string
     addProductToCart: (id: number, count: number) => void
-     isLiked?: boolean
-    toggleLikeState: (id: number) => void
+    //  isLiked?: boolean
+    // toggleLikeState: (id: number) => void
 }
   
 const ProductsListItem = ({
@@ -32,8 +33,8 @@ const ProductsListItem = ({
     price,
     image,
     addProductToCart,
-    isLiked = false,
-    toggleLikeState,
+    // isLiked = false,
+    // toggleLikeState,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
 
@@ -44,12 +45,14 @@ const ProductsListItem = ({
         setCount((prevState: number) => prevState - 1)
     }
 
+const isLiked = useAppSelector((state) => state.likeProducts[id])
+
     return (
         <Card className="product" variant="outlined">
             <CardContent>
                 <Button
                     variant="outlined"
-                    onClick={() => toggleLikeState(id) }
+                  //  onClick={() => toggleLikeState(id) }
                 >       
                     {/* {productsLikeState[id] */}
                          { isLiked ? (

@@ -51,8 +51,8 @@ const ProductsList = ({
                                 price={price}
                                 image={image}
                                 addProductToCart={addProductToCart}
-                                isLiked={productsLikeState[id]}
-                                toggleLikeState={ toggleLikeState}
+                                // isLiked={productsLikeState[id]}
+                                // toggleLikeState={ toggleLikeState}
                             />
                         </Grid>
                     )
